@@ -108,29 +108,24 @@ class VectorBacktester(object):
     def update_and_run(self, SMA):
         """ Updates SMA parameters and returns negative absolute performance
         (for minimazation algorithm).
-
         Parameters
         ----------
         SMA:tuple
             SMA Parameter tuple
-
         Returns
         -------
         negative absolute performance
-
         """
         self.set_parameters(int(SMA[0]), int(SMA[1]))
         return -self.run_strategy()[0]
 
     def optimize_parameters(self, SMA1_range, SMA2_range):
         """ Find global maximum given the SMA parameter range
-
         Parameters
         ----------
         SMA1_range: tuple
         SMA2_range: tuple
             (start, end, step size)
-
         Returns
         -------
         Optimized parameters, and updated strategy perf
